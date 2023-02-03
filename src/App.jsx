@@ -1,19 +1,11 @@
 import React from 'react';
-import { ConfigProvider } from 'antd';
+import './index.css';
 import { MemberAnalysis } from './packages';
 
 const App = () => (
-  <ConfigProvider
-    theme={{
-      token: {
-        colorPrimary: '#154986',
-      },
-    }}
-  >
-    <div>
-      <MemberAnalysis />
-    </div>
-  </ConfigProvider>
+  <div>
+    <MemberAnalysis />
+  </div>
 );
 
 export default App;

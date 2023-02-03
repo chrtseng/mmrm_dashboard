@@ -1,4 +1,5 @@
 import React from 'react';
+import { Space } from 'antd';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
@@ -9,26 +10,35 @@ const Heading = styled.div(({ fontSize, lineHeight }) => ({
   color: '#292929',
 }));
 
-const SectionHeader = ({ children, fontSize, lineHeight }) => (
-  <div>
+const SuffixText = styled.span`
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  color: #888888;
+`;
+
+const SectionHeader = ({ children, fontSize, lineHeight, suffix }) => (
+  <Space size="middle">
     <Heading fontSize={fontSize} lineHeight={lineHeight}>
       {' '}
       {children}{' '}
     </Heading>
-    <span>最後更新時間： 2023/02/03 23:59:59</span>
-  </div>
+    {suffix && <SuffixText>{suffix}</SuffixText>}
+  </Space>
 );
 
 SectionHeader.propTypes = {
   children: PropTypes.node,
   fontSize: PropTypes.number,
   lineHeight: PropTypes.number,
+  suffix: PropTypes.string,
 };
 
 SectionHeader.defaultProps = {
   children: null,
-  fontSize: 16,
-  lineHeight: 20,
+  fontSize: null,
+  lineHeight: null,
+  suffix: null,
 };
 
 export default SectionHeader;
