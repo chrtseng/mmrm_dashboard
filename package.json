@@ -2,25 +2,57 @@
   "name": "mmrm_dashboard",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^13.0.0",
-    "@testing-library/user-event": "^13.2.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.0"
-  },
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "lint": "eslint 'src/**/*.{js,jsx}' --ext jsx --ext js --fix --max-warnings=0",
+    "format": "prettier 'src/**/*.{js,jsx}' --write",
+    "compile": "cross-env NODE_ENV=production babel src/packages --out-dir dist --copy-files",
+    "postcompile": "git add dist"
+  },
+  "dependencies": {
+    "@formatjs/intl": "^2.6.5",
+    "antd": "^5.1.7",
+    "axios": "^1.3.1",
+    "chart.js": "^4.2.0",
+    "lodash": "^4.17.21",
+    "moment": "^2.29.4",
+    "react": "^18.2.0",
+    "react-chartjs-2": "^5.2.0",
+    "react-dom": "^18.2.0",
+    "react-intl": "^6.2.7",
+    "react-redux": "^8.0.5",
+    "react-router": "^6.8.0",
+    "react-router-dom": "^6.8.0",
+    "react-scripts": "5.0.1",
+    "redux": "^4.2.1",
+    "redux-saga": "^1.2.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.20.7",
+    "@babel/preset-env": "^7.20.2",
+    "@babel/preset-react": "^7.18.6",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.33.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.1.0",
+    "prettier": "^2.8.3",
+    "prop-types": "^15.8.1",
+    "styled-components": "^5.3.6"
   },
   "eslintConfig": {
     "extends": [
-      "react-app",
-      "react-app/jest"
+      "react-app"
     ]
   },
   "browserslist": {
@@ -34,5 +66,16 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx}": [
+      "yarn lint",
+      "yarn format"
+    ]
+  },
+  "ignore": [
+    "node_modules",
+    "dist",
+    "*.config.js"
+  ]
 }
