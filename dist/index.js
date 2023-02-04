@@ -9,12 +9,11 @@ Object.defineProperty(exports, "MemberAnalysis", {
     return _MemberAnalysis.default;
   }
 });
-Object.defineProperty(exports, "Test", {
+Object.defineProperty(exports, "default", {
   enumerable: true,
   get: function get() {
-    return _Test.default;
+    return _MemberAnalysis.default;
   }
 });
-var _Test = _interopRequireDefault(require("./components/Test"));
 var _MemberAnalysis = _interopRequireDefault(require("./pages/MemberAnalysis"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }

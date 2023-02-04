@@ -1,0 +1,33 @@
+.overview_card_wrap {
+  background-color: #fff;
+  border-radius: 0.5rem;
+  padding: 32px 36px;
+  color: #292929;
+  text-align: center;
+}
+
+.overview_card_title {
+  font-size: 1rem;
+  line-height: 22px;
+}
+
+.overview_card_statistics {
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 32px;
+  color: #154986;
+  margin: 7.5px 0;
+}
+
+.overview_card_keyValueWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.overview_card_keyValue {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  line-height: 22px;
+}
